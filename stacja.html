@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Kalkulator Paliwa</h2>
+    <div>
+        <input type="radio" value="Paliwo" id="Benzyna" name="rodzaj">
+        <label for="Benzyna">Benzyna</label>
+    </div>
+    <div>
+        <input type="radio" value="Paliwo" id="Ropa" name="rodzaj">
+        <label for="Ropa">Ropa</label><br>
+    </div>
+    <div>
+        <label for="Litry">Ile litrów</label>
+        <input type="text" id="litry">
+    </div>
+    <button onclick="oblicz()">Oblicz</button>
+    <p>Cena Paliwa</p>
+    <p id="koszt"></p>
+
+    <script>
+        function oblicz() {
+            var Paliwo = document.getElementById("litry").value;
+            let B = document.getElementById("Benzyna").checked;
+            let R = document.getElementById("Ropa").checked;
+            if (B == true) {
+                let cena = Paliwo * 6.70;
+                document.getElementById("koszt").innerHTML = cena;
+            }
+            else if (R == true) {
+                let cena = Paliwo * 7.5;
+                document.getElementById("koszt").innerHTML = cena;
+            }
+        }
+    </script>
+</body>
+
+</html>
